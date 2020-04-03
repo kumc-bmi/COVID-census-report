@@ -29,7 +29,7 @@ update covid_report SET noncovid_icu = (
   )
 )
 where site_id = @institution ;
-update covid_report SET covidpend_icu_bed = (
+update covid_report SET noncovid_icu_vent = (
   select value from redcap_data where record = @institution and field_name='noncovid_icu_vent' and project_id='16558' and instance = (
     select max(instance) from redcap_data where project_id='16558' and field_name='noncovid_icu_vent' and record = @institution
   )
