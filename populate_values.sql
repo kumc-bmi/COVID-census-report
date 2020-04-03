@@ -36,26 +36,18 @@ update covid_report SET covidpend_icu_bed = (
 )
 where site_id = @institution ;
 update covid_report SET icu_bed_num = (
-  select value from redcap_data where record = @institution and field_name='icu_bed_num' and project_id='16558' and instance = (
-    select max(instance) from redcap_data where project_id='16558' and field_name='icu_bed_num' and record = @institution
-  )
+  select value from redcap_data where record = @institution and field_name='icu_bed_num' and project_id='16558'
 )
 where site_id = @institution ;
 update covid_report SET ventilator_num = (
-  select value from redcap_data where record = @institution and field_name='ventilator_num' and project_id='16558' and instance = (
-    select max(instance) from redcap_data where project_id='16558' and field_name='ventilator_num' and record = @institution
-  )
+  select value from redcap_data where record = @institution and field_name='ventilator_num' and project_id='16558'
 )
 where site_id = @institution ;
 update covid_report SET icu_bed_surge_num = (
-  select value from redcap_data where record = @institution and field_name='icu_bed_surge_num' and project_id='16558' and instance = (
-    select max(instance) from redcap_data where project_id='16558' and field_name='icu_bed_surge_num' and record = @institution
-  )
+  select value from redcap_data where record = @institution and field_name='icu_bed_surge_num' and project_id='16558'
 )
 where site_id = @institution ;
 update covid_report SET ventilator_surge_num = (
-  select value from redcap_data where record = @institution and field_name='ventilator_surge_num' and project_id='16558' and instance = (
-    select max(instance) from redcap_data where project_id='16558' and field_name='ventilator_surge_num' and record = @institution
-  )
+  select value from redcap_data where record = @institution and field_name='ventilator_surge_num' and project_id='16558'
 )
 where site_id = @institution ;
