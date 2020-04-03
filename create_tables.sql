@@ -4,16 +4,16 @@ drop table covid_report;
 CREATE TABLE covid_report (
   site_name VARCHAR(100), 
   site_id INT, 
-  covidpend_icu_bed INT,
-  covidpend_icu_bed_vent INT, 
-  covidcfrm_icu_bed INT, 
-  covidcfrm_icu_bed_vent INT, 
-  noncovid_icu INT, 
-  noncovid_icu_vent INT,
-  icu_bed_num INT, 
-  ventilator_num INT, 
-  icu_bed_surge_num INT, 
-  ventilator_surge_num INT
+	COVID_Pending_ICU_Patients INT,
+	COVID_Pending_ICU_Vent INT, 
+	COVID_Confirmed_ICU_Patients INT, 
+	COVID_Confirmed_ICU_Vent INT, 
+  Non_COVID_ICU_Patients INT, 
+  Non_COVID_ICU_Vent INT,
+  ICU_Bed_Capacity INT, 
+  Number_of_Ventilators INT, 
+	Number_of_surge_ICU_beds INT, 
+	Number_of_surge_ventilators INT
 );
 
 INSERT INTO covid_report (site_id)
